@@ -252,13 +252,15 @@ def removeicon(icon_path):
         os.remove(icon_path)
     else:
         icon_svg = Path(f"{icon_path}.svg")
-        if not icon_svg.exists():
+        if icon_svg.exists():
+            os.remove(icon_svg)
+        else:
             icon_png = Path(f"{icon_path}.png")
-            if not icon_png.exists():
+            if icon_png.exists():
+                os.remove(icon_png)
+            else:
                 print("No icon file found. Proceeding with other files...")
                 return None
-            os.remove(icon_png)
-        os.remove(icon_svg)
     print("Finished removing icon.")
 
 
