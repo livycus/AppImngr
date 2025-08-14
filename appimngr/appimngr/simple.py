@@ -205,17 +205,22 @@ def copy_icons(install_path, values=None):
     app_icon = values["app_icon"]
     if app_icon.endswith(".svg") or app_icon.endswith(".png"):
         icon_location = next(install_path.rglob(app_icon), None)
-        shutil.copy(icon_location, settings.icons_dir)
+        if icon_location:
+            shutil.copy(icon_location, settings.icons_dir)
+        else:
+            print("No icon file found. Aborting...")
+            return
     else:
         icon_svg = next(install_path.rglob(f"{app_icon}.svg"), None)
-        if not icon_svg:
+        if icon_svg:
+            shutil.copy(icon_svg, settings.icons_dir)
+        else:
             icon_png = next(install_path.rglob(f"{app_icon}.png"), None)
-            if not icon_png:
+            if icon_png:
+                shutil.copy(icon_png, settings.icons_dir)
+            else:
                 print("No icon file found. Aborting...")
                 return None
-            shutil.copy(icon_png, settings.icons_dir)
-        shutil.copy(icon_svg, settings.icons_dir)
-    print("Finished copying icons.")
 
 
 def makebin(new_arg, values=None):
