@@ -1,0 +1,18 @@
+Available options:
+
+Main:
+- installall   |   Automatically installs all new AppImages [recommended]
+- install   |   Runs installer prompt on new AppImages
+- reinstall   |   Runs installer prompt on all available AppImages
+- reinstallall   |   Automatically installs all available AppImages
+- uninstall   |   Runs uninstaller prompt (asks y/n to remove AppImage file)
+- uninstallall   |   Uninstalls all applications (asks y/n to remove AppImage file for each application)
+- clean   |   Checks all *.desktop entries if a corresponding AppImage file exists and removes desktop and bin entries and corresponding icons if it doesn't
+
+Side Utilities:
+- listnew   |   Lists new AppImages
+- listall   |   Lists contents of ./appimngr/AppImages
+- listinstalled   |   Lists *.desktop entries
+- help   |   Lists all available commands
+
+- exit   |   exits program

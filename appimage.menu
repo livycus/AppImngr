@@ -1,0 +1,14 @@
+ <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.1//EN"
+  "http://www.freedesktop.org/standards/menu-spec/">
+<Menu>
+    <Name>Applications</Name>
+
+    <Menu>
+        <Name>AppImages</Name>
+        <Directory>AppImages.directory</Directory>
+        <Include>
+            <Category>AppImages</Category>
+        </Include>
+    </Menu>
+
+</Menu>

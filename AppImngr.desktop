@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=AppImngr
+Comment=Manage AppImage Apps
+Exec=/usr/local/bin/appimngr
+Icon=appimngr
+Terminal=true
+Categories=Utility;

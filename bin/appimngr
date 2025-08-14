@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+"""Module intended to serve as AppImngr bin entry"""
+import os
+import subprocess
+import sys
+
+homepath = os.path.expanduser("~")
+path = f"{homepath}/.local/share/appimngr"
+
+
+def main():
+    """Function that launches AppImngr"""
+    mainpy = f"{path}/appimngr/main.py"
+    if not mainpy:
+        print("There is no program files at ~/.local/share/appimngr.\nExiting...")
+        return
+    subprocess.run(["python3", mainpy], check=True)
+    return
+
+
+if __name__ == "__main__":
+    try:
+        sys.stdout.write("\033]0;AppImngr\007")
+        sys.stdout.flush()
+        main()
+    except KeyboardInterrupt:
+        sys.exit(0)
